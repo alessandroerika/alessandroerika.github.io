@@ -7,6 +7,31 @@
       $('body').delay(450).css({
         'overflow': 'visible'
       });
+      var countdownDate = new Date("Jun 1, 2024 10:00:00").getTime();
+      var setCountdown = setInterval(function() {
+        var now = new Date().getTime();
+        var timeleft = countdownDate - now;
+            
+        var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("mins").innerHTML = minutes;
+        document.getElementById("secs").innerHTML = seconds;
+
+        if (timeleft < 0) {
+          clearInterval(x);
+          document.getElementById("days").innerHTML = 0;
+          document.getElementById("hours").innerHTML = 0;
+          document.getElementById("mins").innerHTML = 0;
+          document.getElementById("secs").innerHTML = 0;
+        }
+
+      }, 1000)
+      
     });
 
 
@@ -35,7 +60,7 @@
       });
       BasicSlider.slick({
         autoplay: true,
-        autoplaySpeed: 6000,
+        autoplaySpeed: 4000,
         dots: false,
         fade: true,
         arrows: false,
@@ -232,10 +257,10 @@
       }
       
 /* 14. counterUp*/
-    $('.counter').counterUp({
-      delay: 10,
-      time: 3000
-    });
+    // $('.counter').counterUp({
+    //   delay: 10,
+    //   time: 3000
+    // });
 
   //Another popUp     
         var popUp = $('.menorie-icon');
@@ -295,6 +320,8 @@
       // instead of a settings object
     ]
   });
+
+  
 
 
 
