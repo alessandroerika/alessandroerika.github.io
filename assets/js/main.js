@@ -31,8 +31,56 @@
         }
 
       }, 1000)
+
+      // send form data to backend
+      $('#contact-form').submit(function(e) {
+        e.preventDefault();
+
+        var endpoint = "http://localhost:8080/sendForm";
+
+        var formData = $("#contact-form").serialize();
+
+        // var fields = {};
+        // $("#contact-form").find(":input").each(function() {
+        //     // The selector will match buttons; if you want to filter
+        //     // them out, check `this.tagName` and `this.type`; see
+        //     // below
+        //     fields[this.name] = $(this).val();
+        // });
+        // //var obj = {fields: fields};
+        // console.log(fields);
+
+        //const form = $(e.target);
+        //const json = convertFormToJSON(form);
+        //console.log(json);
+
+        $.ajax({
+          type: "POST",
+          url: endpoint,
+          data: formData,
+          //contentType: "application/json",
+          //dataType: "json",
+          success: function (data) {
+            console.log("Success: ", data);
+          },
+          error: function (error) {
+            console.log("Success: ", data);
+          }
+        });
+
+        return false;
+      });
       
     });
+
+    function convertFormToJSON(form) {
+      const array = $(form).serializeArray(); // Encodes the set of form elements as an array of names and values.
+      const json = {};
+      $.each(array, function () {
+        json[this.name] = this.value || "";
+      });
+      return json;
+    }
 
 
 /* 2. slick Nav */
@@ -320,9 +368,5 @@
       // instead of a settings object
     ]
   });
-
-  
-
-
 
 })(jQuery);

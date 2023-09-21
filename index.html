@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/custom_favicon.png">
 
     <!-- CSS here -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -56,6 +56,7 @@
                                     <ul id="navigation">                                                          
                                         <li><a href="index.html">Home</a></li>
                                         <li><a href="#info">Info</a></li>
+                                        <li><a href="#regalo">Regalo</a></li>
                                         <li><a href="#confermaInvito">Conferma l'invito</a></li>
                                         <!-- <li><a href="booking.html">Guestbook</a></li>
                                         <li><a href="blog.html">Blog</a>
@@ -173,8 +174,8 @@
                             <ul>
                                 <li><i class="fas fa-calendar-alt"></i>1 Giugno 2024</li>
                                 <li><i class="far fa-clock"></i>10:00</li>
-                                <li><i class="fas fa-map-marker-alt"></i>Chiesa di San Giovanni Battista</li>
-                                <li>Piazza San Giovanni Battista 1, Cesano Boscone (MI)</li>
+                                <li><i class="fas fa-map-marker-alt"></i>Chiesa Parrocchiale di San Giovanni Battista</li>
+                                <li>Via Monsignor Pogliani, 1, 20090 Cesano Boscone (MI)</li>
                                 <!-- <li><i class="far fa-map"></i> Check out the map</li> -->
                             </ul>
                         </div>
@@ -215,8 +216,8 @@
                             <ul>
                                 <li><i class="fas fa-calendar-alt"></i>1 Giugno 2024</li>
                                 <li><i class="far fa-clock"></i>13:00</li>
-                                <li><i class="fas fa-map-marker-alt"></i>Ristorante</li>
-                                <li>Vigevano</li>
+                                <li><i class="fas fa-map-marker-alt"></i>Villa Ronchi</li>
+                                <li>Strada dei Ronchi, 110, 27029 Vigevano (PV)</li>
                                 <!-- <li><i class="far fa-map"></i> Check out the map</li> -->
                             </ul>
                         </div>
@@ -324,14 +325,15 @@
     </div> -->
     <!-- Gallery Area End -->
     <!--? Gift Start -->
-    <section class="gift-area gift-padding fix" data-background="assets/img/gallery/section_bg3.png">
+    <section class="gift-area gift-padding fix" id="regalo" data-background="assets/img/gallery/section_bg3.png">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="gift-caption text-center">
-                        <h2>The Best Gift From You</h2>
-                        <p>Will be your presentation in our wedding</p>
-                        <a href="#" class="btn btn-whit">resarve your Seat</a>
+                        <h2>LISTA NOZZE</h2>
+                        <p>Intestatario: Alessandro Ambrogio Galli</p>
+                        <p>IBAN: IT40E0306932900100000005708</p>
+                        <p>Causale: Regalo di matrimonio da [TUO NOME/FAMIGLIA]</p>
                     </div>
                 </div>
             </div>
@@ -344,43 +346,48 @@
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-6">
                     <div class="form-wrapper">
-                        <form id="contact-form" action="#" method="POST">
+                        <form id="contact-form">
                             <!-- section tittle -->
                             <div class="row ">
                                 <div class="col-lg-12">
                                     <div class="section-tittle tittle-form text-center mb-30">
-                                        <h2>Are you attending?</h2>
+                                        <h2>Confermi l'invito al nostro matrimonio?</h2>
                                         <img src="assets/img/gallery/tittle_img2.png" alt="">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-12">
+                                <div class="col-lg-6">
                                     <div class="form-box mb-30">
-                                        <input type="text" name="name" placeholder="Name">
+                                        <input type="text" name="name" placeholder="Nome">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-box mb-30">
+                                        <input type="text" name="surname" placeholder="Cognome">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-box subject-icon mb-30">
-                                        <input type="Email" name="subject" placeholder="Email">
+                                        <input type="Email" name="email" placeholder="Email">
                                     </div>
                                 </div>
                                 <div class="col-lg-12 mb-30">
                                     <div class="select-itms">
-                                        <select name="select" id="select2">
-                                            <option value="">1 Guest</option>
-                                            <option value="">2 Guest</option>
-                                            <option value="">3 Guest</option>
-                                            <option value="">4 Guest</option>
+                                        <select name="guests" id="select2">
+                                            <option value="1">Sono da solo</option>
+                                            <option value="2">2 ospiti</option>
+                                            <option value="3">3 ospiti</option>
+                                            <option value="4">4 ospiti</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-box message-icon mb-30">
-                                        <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                                        <textarea name="message" id="message" placeholder="Segnala eventuali allergie/intolleranze"></textarea>
                                     </div>
                                 <div class="submit-info">
-                                    <button class="btn" type="submit">Confirm now</button>
+                                    <button id="form-btn" class="btn" type="submit">Conferma</button>
                                 </div>
                                 </div>
                             </div>
@@ -516,13 +523,12 @@
 <footer>
     <!-- Footer Start-->
     <div class="footer-main" data-background="assets/img/gallery/section_bg4.png">
-        <div class="footer-area footer-padding">
+        <!-- <div class="footer-area footer-padding">
             <div class="container">
                 <div class="row d-flex justify-content-between">
                     <div class="col-xl-2  col-lg-3 col-md-5 col-sm-6">
                         <div class="single-footer-caption mb-50">
                             <div class="single-footer-caption mb-30">
-                                <!-- logo -->
                                 <div class="footer-logo">
                                     <a href="index.html"><img src="assets/img/logo/logo_blank.png" alt=""></a>
                                 </div>
@@ -572,7 +578,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- footer-bottom area -->
         <div class="footer-bottom-area">
             <div class="container">
