@@ -1,7 +1,10 @@
 (function ($)
   { "use strict"
+
+    var LOCALHOST = "http://localhost:8080";
+    var endpoint = "";
   
-/* 1. Proloder */
+    /* 1. Proloder */
     $(window).on('load', function () {
       $('#preloader-active').delay(450).fadeOut('slow');
       $('body').delay(450).css({
@@ -32,59 +35,52 @@
 
       }, 1000)
 
-      // send form data to backend
+      //send form data to backend
       $('#contact-form').submit(function(e) {
         e.preventDefault();
 
-        var endpoint = "http://localhost:8080/sendForm";
+        var recaptchaResponse = grecaptcha.getResponse();
 
-        var formData = $("#contact-form").serialize();
+        if(recaptchaResponse.length === 0){
+            alert('Per favore completa il reCAPTCHA');
+            return;
+        }
 
-        // var fields = {};
-        // $("#contact-form").find(":input").each(function() {
-        //     // The selector will match buttons; if you want to filter
-        //     // them out, check `this.tagName` and `this.type`; see
-        //     // below
-        //     fields[this.name] = $(this).val();
-        // });
-        // //var obj = {fields: fields};
-        // console.log(fields);
-
-        //const form = $(e.target);
-        //const json = convertFormToJSON(form);
-        //console.log(json);
+        var formData = $(this).serialize();
 
         $.ajax({
           type: "POST",
-          url: endpoint,
-          data: formData,
-          //contentType: "application/json",
-          //dataType: "json",
+          url: LOCALHOST + "/checkReCAPTCHA",
+          data: {token:recaptchaResponse},
           success: function (data) {
             console.log("Success: ", data);
+            sendForm(formData);
           },
-          error: function (error) {
-            console.log("Success: ", data);
+          error: function(xhr, status, error) {
+            console.error(xhr.responseText);
           }
         });
 
-        return false;
       });
       
     });
 
-    function convertFormToJSON(form) {
-      const array = $(form).serializeArray(); // Encodes the set of form elements as an array of names and values.
-      const json = {};
-      $.each(array, function () {
-        json[this.name] = this.value || "";
+    function sendForm(formData) {
+      $.ajax({
+          type: 'POST',
+          url: LOCALHOST + "/sendForm",
+          data: formData,
+          success: function(response) {
+              console.log(response);
+          },
+          error: function(xhr, status, error) {
+              console.error(xhr.responseText);
+          }
       });
-      return json;
     }
 
-
-/* 2. slick Nav */
-// mobile_menu
+    /* 2. slick Nav */
+    // mobile_menu
     var menu = $('ul#navigation');
     if(menu.length){
       menu.slicknav({
@@ -95,7 +91,7 @@
     };
 
 
-/* 3. MainSlider-1 */
+    /* 3. MainSlider-1 */
     function mainSlider() {
       var BasicSlider = $('.slider-active');
       BasicSlider.on('init', function (e, slick) {
