@@ -323,7 +323,7 @@ hr{
     display:inline-block;
     -moz-user-select:none;
     cursor:pointer;
-    //transition:color 0.4s linear;
+    /* transition:color 0.4s linear; */
     position:relative;
     z-index:1;
     border:0;
