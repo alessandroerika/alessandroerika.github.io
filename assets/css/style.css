@@ -2517,7 +2517,7 @@ hr{
 }
 .count-down-area{
     position:relative;
-    top:-73px
+    /* top:-73px; */
 }
 .count-down-area .count-down-wrapper{
     background-repeat:no-repeat;
@@ -3001,10 +3001,10 @@ hr{
     color:#cfcfcf
 }
 .footer-bottom-area .footer-copy-right p i{
-    color:#cd0102
+    color:#d6c49c;
 }
 .footer-bottom-area .footer-copy-right p a{
-    color:#cd0102
+    color:#d6c49c;
 }
 .footer-bottom-area .footer-copy-right p a:hover{
     color:#fff
