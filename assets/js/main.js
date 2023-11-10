@@ -71,10 +71,12 @@
           url: endpoint + "/sendForm",
           data: formData,
           success: function(response) {
-              console.log(response);
+            console.log(response);
+            alert("Grazie per aver confermato l'invito!");
           },
           error: function(xhr, status, error) {
-              console.error(xhr.responseText);
+            console.error(xhr.responseText);
+            alert("Qualcosa è andato storto!");
           }
       });
     }
