@@ -2,7 +2,7 @@
   { "use strict"
 
     var LOCALHOST = "http://localhost:8080";
-    var endpoint = "";
+    var endpoint = "https://matrimonio-service.onrender.com/";
   
     /* 1. Proloder */
     $(window).on('load', function () {
@@ -50,7 +50,7 @@
 
         $.ajax({
           type: "POST",
-          url: LOCALHOST + "/checkReCAPTCHA",
+          url: endpoint + "/checkReCAPTCHA",
           data: {token:recaptchaResponse},
           success: function (data) {
             console.log("Success: ", data);
@@ -68,7 +68,7 @@
     function sendForm(formData) {
       $.ajax({
           type: 'POST',
-          url: LOCALHOST + "/sendForm",
+          url: endpoint + "/sendForm",
           data: formData,
           success: function(response) {
               console.log(response);
