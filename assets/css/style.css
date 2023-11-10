@@ -2096,20 +2096,21 @@ hr{
     top:-21px
 }
 .mobile_menu .slicknav_menu .slicknav_btn .slicknav_icon-bar{
-    background-color:red !important
+    background-color:black !important
 }
 .mobile_menu .slicknav_menu .slicknav_nav{
-    margin-top:24px !important
+    margin-top:24px !important;
+    background: #d6c49c;
 }
 .mobile_menu .slicknav_menu .slicknav_nav a:hover{
     background:transparent;
-    color:#ff2828
+    color:grey;
 }
 .mobile_menu .slicknav_menu .slicknav_nav a{
     font-size:15px;
     padding:7px 10px;
     text-transform: none;
-    color: red;
+    color: black;
 }
 .mobile_menu .slicknav_menu .slicknav_nav .slicknav_item a{
     padding:0 !important
