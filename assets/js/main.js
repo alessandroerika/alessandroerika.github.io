@@ -1,8 +1,8 @@
 (function ($)
   { "use strict"
 
-    var LOCALHOST = "http://localhost:8080";
-    var endpoint = "https://matrimonio-service.onrender.com";
+    var endpoint = "http://localhost:8080";
+    //var endpoint = "https://matrimonio-service.onrender.com";
   
     /* 1. Proloder */
     $(window).on('load', function () {
@@ -53,7 +53,6 @@
           url: endpoint + "/checkReCAPTCHA",
           data: {token:recaptchaResponse},
           success: function (data) {
-            console.log("Success: ", data);
             sendForm(formData);
           },
           error: function(xhr, status, error) {
@@ -66,17 +65,20 @@
     });
 
     function sendForm(formData) {
+      $(".form-spinner").show();
       $.ajax({
           type: 'POST',
           url: endpoint + "/sendForm",
           data: formData,
           success: function(response) {
-            console.log(response);
             alert("Grazie per aver confermato l'invito!");
           },
           error: function(xhr, status, error) {
             console.error(xhr.responseText);
             alert("Qualcosa è andato storto!");
+          },
+          complete: function() {
+            $(".form-spinner").hide();
           }
       });
     }

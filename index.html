@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
@@ -226,9 +228,10 @@
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-6">
                     <div class="form-wrapper">
+                        <div class="form-spinner"></div>
                         <form id="contact-form">
                             <!-- section tittle -->
-                            <div class="row ">
+                            <div class="row">
                                 <div class="col-lg-12">
                                     <div class="section-tittle tittle-form text-center mb-30">
                                         <h2>Confermi l'invito al nostro matrimonio?</h2>
@@ -239,22 +242,22 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-box mb-30">
-                                        <input type="text" name="name" placeholder="Nome">
+                                        <input type="text" name="name" placeholder="Nome" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-box mb-30">
-                                        <input type="text" name="surname" placeholder="Cognome">
+                                        <input type="text" name="surname" placeholder="Cognome" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-box subject-icon mb-30">
-                                        <input type="Email" name="email" placeholder="Email">
+                                        <input type="email" name="email" placeholder="Email" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 mb-30">
                                     <div class="select-itms">
-                                        <select name="guests" id="select2">
+                                        <select name="guests" id="select2" required>
                                             <option value="1">Sono da solo</option>
                                             <option value="2">2 ospiti</option>
                                             <option value="3">3 ospiti</option>
@@ -268,7 +271,13 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-12 recaptchaDiv">
-                                    <div class="g-recaptcha" data-sitekey="6LepmQopAAAAAH70dyrid9JLQ5arb7Ior0SVhzzo"></div>
+                                    <!-- production client key --> 
+                                    <!-- <div class="g-recaptcha" data-sitekey="6LepmQopAAAAAH70dyrid9JLQ5arb7Ior0SVhzzo"></div> -->
+                                    <!-- end production -->
+
+                                    <!-- local client key --> 
+                                    <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+                                    <!-- end production -->
                                 </div>
                                 <div class="col-lg-12 submit-info">
                                     <button id="form-btn" class="btn" type="submit">Conferma</button>
