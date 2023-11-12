@@ -1,8 +1,8 @@
 (function ($)
   { "use strict"
 
-    var endpoint = "http://localhost:8080";
-    //var endpoint = "https://matrimonio-service.onrender.com";
+    //var endpoint = "http://localhost:8080";
+    var endpoint = "https://matrimonio-service.onrender.com";
   
     /* 1. Proloder */
     $(window).on('load', function () {
