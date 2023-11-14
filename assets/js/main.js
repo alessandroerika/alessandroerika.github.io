@@ -56,7 +56,8 @@
             sendForm(formData);
           },
           error: function(xhr, status, error) {
-            console.error(xhr.responseText);
+            alert("Qualcosa è andato storto!")
+            //console.error(xhr.responseText);
           }
         });
 
@@ -74,7 +75,7 @@
             alert("Grazie per aver confermato l'invito!");
           },
           error: function(xhr, status, error) {
-            console.error(xhr.responseText);
+            //console.error(xhr.responseText);
             alert("Qualcosa è andato storto!");
           },
           complete: function() {
