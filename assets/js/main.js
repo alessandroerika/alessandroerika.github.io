@@ -46,6 +46,8 @@
             return;
         }
 
+        $(".form-spinner").show();
+
         var formData = $(this).serialize();
 
         $.ajax({
@@ -58,6 +60,9 @@
           error: function(xhr, status, error) {
             alert("Qualcosa è andato storto!")
             //console.error(xhr.responseText);
+          },
+          complete: function() {
+            $(".form-spinner").hide();
           }
         });
 
@@ -66,7 +71,6 @@
     });
 
     function sendForm(formData) {
-      $(".form-spinner").show();
       $.ajax({
           type: 'POST',
           url: endpoint + "/sendForm",
@@ -77,9 +81,6 @@
           error: function(xhr, status, error) {
             //console.error(xhr.responseText);
             alert("Qualcosa è andato storto!");
-          },
-          complete: function() {
-            $(".form-spinner").hide();
           }
       });
     }
