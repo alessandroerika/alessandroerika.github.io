@@ -60,8 +60,6 @@
           error: function(xhr, status, error) {
             alert("Qualcosa è andato storto!")
             //console.error(xhr.responseText);
-          },
-          complete: function() {
             $(".form-spinner").hide();
           }
         });
@@ -81,6 +79,9 @@
           error: function(xhr, status, error) {
             //console.error(xhr.responseText);
             alert("Qualcosa è andato storto!");
+          },
+          complete: function() {
+            $(".form-spinner").hide();
           }
       });
     }
