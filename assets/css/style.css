@@ -1,4 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Barlow:300,400,500,600,700|Playfair+Display:400,500,600,700,800,900|Roboto:300,400,500,700&display=swap");
+@font-face {
+    font-family: 'SweetWedding';
+    src: url('../fonts/SweetWedding.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'TempusSansITC';
+    src: url('../fonts/TempusSansITCRegular.TTF') format('truetype'),
+         url('../fonts/TempusSansITCBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 .white-bg{
     background:#ffffff
 }
@@ -104,12 +115,14 @@
     opacity:0.9
 }
 body{
-    font-family:"Roboto",sans-serif;
+    /* font-family:"Roboto",sans-serif; */
+    font-family: 'TempusSansITC', serif;
     font-weight:normal;
     font-style:normal
 }
 h1,h2,h3,h3,h4,h5,h6{
-    font-family:"Playfair Display",serif;
+    /* font-family:"Playfair Display",serif; */
+    font-family: 'TempusSansITC', serif;
     color:#212121;
     margin-top:0px;
     font-style:normal;
@@ -117,13 +130,14 @@ h1,h2,h3,h3,h4,h5,h6{
     text-transform:normal
 }
 p{
-    font-family:"Roboto",sans-serif;
+    /* font-family:"Roboto",sans-serif; */
+    font-family: 'TempusSansITC', serif;
     color:#2e3c40;
     font-size:16px;
     line-height:30px;
     margin-bottom:15px;
     font-weight:normal
-}
+}*/
 .bg-img-1{
     background-image:url(../img/slider/slider-img-1.jpg)
 }
@@ -2019,7 +2033,7 @@ hr{
     text-transform:uppercase;
     display:block;
     font-size:16px;
-    font-family:"Barlow",sans-serif;
+    /* font-family:"Barlow",sans-serif; */
     -webkit-transition:all .3s ease-out 0s;
     -moz-transition:all .3s ease-out 0s;
     -ms-transition:all .3s ease-out 0s;
@@ -2158,13 +2172,49 @@ hr{
     }
 }
 .img1{
-    background-image:url(../img/hero/myImg1_50opa.png);
+    background-image:url(../img/hero/1_50opa.png);
     background-repeat:no-repeat;
     background-position:center center;
     background-size:cover;
 }
 .img2{
-    background-image:url(../img/hero/myImg2_50opa.png);
+    background-image:url(../img/hero/2_50opa.png);
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;
+}
+.img3{
+    background-image:url(../img/hero/3_50opa.png);
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;
+}
+.img4{
+    background-image:url(../img/hero/4_50opa.png);
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;
+}
+.img5{
+    background-image:url(../img/hero/5_50opa.png);
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;
+}
+.img6{
+    background-image:url(../img/hero/6_50opa.png);
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;
+}
+.img7{
+    background-image:url(../img/hero/7_50opa.png);
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;
+}
+.img8{
+    background-image:url(../img/hero/8_50opa.png);
     background-repeat:no-repeat;
     background-position:center center;
     background-size:cover;
@@ -2185,10 +2235,10 @@ hr{
 }
 .slider-area .hero__caption span{
     color: black;
-    text-transform:uppercase;
+    /* text-transform:uppercase; */
     font-size:22px;
     font-weight:700;
-    font-family:"Barlow",sans-serif;
+    /* font-family:"Barlow",sans-serif; */
     position:relative;
     display:inline-block;
     /*padding-left:50px;*/
@@ -2224,9 +2274,10 @@ hr{
     font-weight:700;
     margin-bottom:14px;
     color: black;
-    font-family:"Playfair Display",serif;
+    /* font-family:"Playfair Display",serif; */
+    font-family: 'SweetWedding', serif;
     line-height:1.2;
-    text-transform:capitalize;
+    /* text-transform:capitalize; */
     margin-bottom:30px;
     position:relative
 }
@@ -2460,7 +2511,7 @@ hr{
     -ms-transition:all .3s ease-out 0s;
     -o-transition:all .3s ease-out 0s;
     transition:all .3s ease-out 0s;
-    border:1px solid transparent
+    border:1px solid transparent;
 }
 .pricing-card-area .single-card .card-top{
     border-bottom:2px solid #f4f4f4;
@@ -2536,7 +2587,7 @@ hr{
     display:block;
     font-weight:600;
     text-transform:uppercase;
-    font-family:"Barlow",sans-serif
+    /* font-family:"Barlow",sans-serif */
 }
 .count-down-area .count-down-wrapper .single-counter p{
     font-size:18px;
@@ -2546,7 +2597,7 @@ hr{
     padding:0;
     font-weight:600;
     text-transform:uppercase;
-    font-family:"Barlow",sans-serif
+    /* font-family:"Barlow",sans-serif */
 }
 .gallery-area .single-gallery{
     overflow:hidden
@@ -2655,7 +2706,7 @@ hr{
     font-weight:700;
     margin-bottom:14px;
     color:black;
-    font-family:"Playfair Display",serif;
+    /* font-family:"Playfair Display",serif; */
     line-height:1.2;
     text-transform:capitalize;
     margin-bottom:14px
@@ -5310,9 +5361,6 @@ b,sup,sub,u,del{
     padding:50px 0;
     border-top:1px dotted #eee
 }
-.mb-30{
-    margin-bottom:30px
-}
 .mt-30{
     margin-top:30px
 }
@@ -5334,4 +5382,34 @@ b,sup,sub,u,del{
     /* opacity: 0.4; */
     filter: alpha(opacity=40);
     display: none;
+}
+.cit h5{
+    font-weight: 700;
+}
+.cit{
+    color: black;
+    font-size: 22px;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.2em;
+    margin-bottom: 100px;
+    font-style: italic;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    .cit{
+        margin-bottom: 0px;
+        font-size: 16px;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px){
+    .cit{
+        margin-bottom: 0px;
+        font-size: 16px;
+    }
+}
+@media (max-width: 575px){
+    .cit{
+        margin-bottom: 0px;
+        font-size: 16px;
+    }
 }
