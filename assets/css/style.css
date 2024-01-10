@@ -2230,13 +2230,13 @@ hr{
     background-position:center center;
     background-size:cover
 }
-.slider-area .hero__caption{
+.pricing-card-area .hero__caption{
     overflow:hidden
 }
-.slider-area .hero__caption span{
+.pricing-card-area .hero__caption span{
     color: black;
     /* text-transform:uppercase; */
-    font-size:22px;
+    font-size:40px;
     font-weight:700;
     /* font-family:"Barlow",sans-serif; */
     position:relative;
@@ -2247,18 +2247,16 @@ hr{
     position:relative
 }
 @media only screen and (min-width: 576px) and (max-width: 767px){
-    .slider-area .hero__caption span{
-        font-size:18px;
-        margin-bottom:7px
+    .pricing-card-area .hero__caption span{
+        font-size:128px;
     }
 }
 @media (max-width: 575px){
-    .slider-area .hero__caption span{
-        font-size:18px;
-        margin-bottom:7px
+    .pricing-card-area .hero__caption span{
+        font-size:24px;
     }
 }
-.slider-area .hero__caption span::before{
+.pricing-card-area .hero__caption span::before{
     content:"";
     position:absolute;
     left:0;
@@ -2269,7 +2267,7 @@ hr{
     height:45px;
     background-repeat:no-repeat
 }
-.slider-area .hero__caption h1{
+.pricing-card-area .hero__caption h1{
     font-size:99px;
     font-weight:700;
     margin-bottom:14px;
@@ -2281,7 +2279,7 @@ hr{
     margin-bottom:30px;
     position:relative
 }
-.slider-area .hero__caption h1::before{
+.pricing-card-area .hero__caption h1::before{
     content:"";
     position:absolute;
     right:34px;
@@ -2292,55 +2290,55 @@ hr{
     background-repeat:no-repeat
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px){
-    .slider-area .hero__caption h1::before{
+    .pricing-card-area .hero__caption h1::before{
         right:0;
         top:-39px
     }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px){
-    .slider-area .hero__caption h1::before{
+    .pricing-card-area .hero__caption h1::before{
         right:-2px;
         top:-42px
     }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px){
-    .slider-area .hero__caption h1::before{
+    .pricing-card-area .hero__caption h1::before{
         display:none
     }
 }
 @media (max-width: 575px){
-    .slider-area .hero__caption h1::before{
+    .pricing-card-area .hero__caption h1::before{
         display:none
     }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px){
-    .slider-area .hero__caption h1{
-        font-size:50px;
+    .pricing-card-area .hero__caption h1{
+        font-size:120px;
         line-height:1.2
     }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px){
-    .slider-area .hero__caption h1{
-        font-size:52px;
+    .pricing-card-area .hero__caption h1{
+        font-size:110px;
         line-height:1.2;
         margin-bottom:10px
     }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px){
-    .slider-area .hero__caption h1{
+    .pricing-card-area .hero__caption h1{
         font-size:47px;
         line-height:1.4;
         margin-bottom:8px
     }
 }
 @media (max-width: 575px){
-    .slider-area .hero__caption h1{
-        font-size:33px;
+    .pricing-card-area .hero__caption h1{
+        font-size:55px;
         line-height:1.4;
         margin-bottom:8px
     }
 }
-.slider-area .hero__caption h1 strong{
+.pricing-card-area .hero__caption h1 strong{
     font-style:italic;
     font-size:49px;
     font-family:"Playfair Display",serif;
@@ -2348,38 +2346,38 @@ hr{
     padding:0 7px 0 4px
 }
 @media only screen and (min-width: 768px) and (max-width: 991px){
-    .slider-area .hero__caption h1 strong{
+    .pricing-card-area .hero__caption h1 strong{
         font-size:40px
     }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px){
-    .slider-area .hero__caption h1 strong{
+    .pricing-card-area .hero__caption h1 strong{
         font-size:25px
     }
 }
 @media (max-width: 575px){
-    .slider-area .hero__caption h1 strong{
+    .pricing-card-area .hero__caption h1 strong{
         font-size:20px
     }
 }
-.slider-area .hero__caption p{
+.pricing-card-area .hero__caption p{
     color:black;
     text-transform:uppercase;
     font-size:23px;
     letter-spacing:0.2em
 }
 @media only screen and (min-width: 768px) and (max-width: 991px){
-    .slider-area .hero__caption p{
+    .pricing-card-area .hero__caption p{
         font-size:15px
     }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px){
-    .slider-area .hero__caption p{
+    .pricing-card-area .hero__caption p{
         font-size:15px
     }
 }
 @media (max-width: 575px){
-    .slider-area .hero__caption p{
+    .pricing-card-area .hero__caption p{
         font-size:13px
     }
 }
@@ -5383,17 +5381,49 @@ b,sup,sub,u,del{
     filter: alpha(opacity=40);
     display: none;
 }
-.cit h5{
-    font-weight: 700;
+.slider-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.slider {
+    width: 100%;
+    max-height: 600px;
+    overflow: hidden;
+    position: relative;
+}
+  
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.citazione{
+    padding: 5%;
 }
 .cit{
     color: black;
-    font-size: 22px;
-    position: relative;
-    display: inline-block;
     letter-spacing: 0.2em;
-    margin-bottom: 100px;
     font-style: italic;
+    text-align: center;
+}
+.cit p{
+    font-size: 26px;
+    line-height: 50px;
+    margin-bottom: 0px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px){
     .cit{

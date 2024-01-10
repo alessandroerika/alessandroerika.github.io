@@ -65,6 +65,20 @@
         });
 
       });
+
+      var slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        var slides = $(".slide");
+        for (var i = 0; i < slides.length; i++) {
+          $(slides[i]).removeClass('active');
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+        $(slides[slideIndex - 1]).addClass('active');
+        setTimeout(showSlides, 3000);
+      }
       
     });
 
@@ -99,7 +113,7 @@
 
 
     /* 3. MainSlider-1 */
-    function mainSlider() {
+    /* function mainSlider() {
       var BasicSlider = $('.slider-active');
       BasicSlider.on('init', function (e, slick) {
         var $firstAnimatingElements = $('.single-slider:first-child').find('[data-animation]');
@@ -160,7 +174,7 @@
         });
       }
     }
-    mainSlider();
+    mainSlider(); */
 
 
 
